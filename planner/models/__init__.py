@@ -1,6 +1,6 @@
 # Import all models
 from .base import Base
-from .categories import Category
+from .category import Category
 from .event import Event
 from .guest import Guest
 from .venue import Venue

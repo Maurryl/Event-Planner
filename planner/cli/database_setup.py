@@ -1,11 +1,13 @@
 from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models.categories import Category
+from models.category import Category
 from models.event import Event
 from models.guest import Guest
 from models.venue import Venue
 from models.event_venue import EventVenue
+# from models.guest_event import GuestEvent
+
 
 # Create database engine
 engine = create_engine('sqlite:///event_planner.db')

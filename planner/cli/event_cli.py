@@ -1,9 +1,11 @@
 # cli/event_cli.py
 from models.event import Event
-from models.base import session
+# from models.base import session
+from planner.cli.database_setup import Session
 
 class EventCLI:
     def menu(self):
+        session = Session()
         while True:
             print("\nEvent Menu:")
             print("1. Create Event")
@@ -15,13 +17,13 @@ class EventCLI:
             choice = input("Choose an option: ")
 
             if choice == '1':
-                self.create_event()
+                self.create_event(session)
             elif choice == '2':
-                self.delete_event()
+                self.delete_event(session)
             elif choice == '3':
-                self.view_all_events()
+                self.view_all_events(session)
             elif choice == '4':
-                self.find_event_by_id()
+                self.find_event_by_id(session)
             elif choice == '5':
                 break
             else:

@@ -15,3 +15,9 @@ class Venue(Base):
     rental_cost = Column(Float)
     availability_status = Column(String)
     events = relationship('Event', secondary='event_venues', back_populates='venues')
+
+     
+    event_venues = relationship("EventVenue", back_populates="venue")
+
+    def __repr__(self):
+        return f"<Venue(venue_name='{self.venue_name}', venue_address='{self.venue_address}', venue_capacity={self.venue_capacity})>"

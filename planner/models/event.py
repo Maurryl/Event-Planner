@@ -16,7 +16,7 @@ class Event(Base):
     # # Relationship with EventVenue
     # event_venues = relationship("EventVenue", back_populates="event")
 
-    # def __repr__(self):
-    #     return f"<Event(event_name='{self.event_name}', event_date='{self.event_date}')>"
+    def __repr__(self):
+        return f"<Event(event_name='{self.event_name}', event_date='{self.event_date}')>"
 
 
